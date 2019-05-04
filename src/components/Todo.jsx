@@ -1,6 +1,8 @@
 import React from "react";
 import TodoList from "./TodoList";
 import { Theme } from "../App";
+import { Button, Input } from "antd";
+
 // 数据驱动 组件化
 //  state props
 //  setState 异步
@@ -103,9 +105,16 @@ class TodoApp extends React.Component {
         <TodoList onDelete={this.handleDel} items={this.state.items} />
         {/* form 里面 点击 button 会触发 onSubmit */}
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.text} />
-          <button>Add# {this.state.items.length + 1} </button>
+          <Input onChange={this.handleChange} value={this.state.text} />
+          <button type={"primary"}>Add# {this.state.items.length + 1} </button>
         </form>
+
+        {/* <form >
+          <Input onChange={this.handleChange} value={this.state.text} />
+          <Button onClick={this.handleSubmit} type={"primary"}>
+            Add# {this.state.items.length + 1}{" "}
+          </Button>
+        </form> */}
         <p>
           <Theme.Consumer>
             {theme => {

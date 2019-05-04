@@ -18,7 +18,7 @@ class TodoList extends React.Component {
         {this.props.items.map((item, index) => (
           <li key={item.id}>
             {item.text}{" "}
-            <Button type="primary" onClick={this.handleClick(index)}>
+            <Button type="danger" onClick={this.handleClick(index)}>
               del
             </Button>
           </li>
